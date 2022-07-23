@@ -98,7 +98,10 @@ while user_range != "quit":
     #If user presses enter, default count is 11 and list is syntax
     if user_range == "":
         user_range = attempt_count
-
+    
+    if user_range not in list_:
+        print("               Good Luck !!!             ")
+        print ("<-------------------------------------->")
 #Additional Game Modes
 
     #If user inputs git, return git syntax
@@ -170,7 +173,7 @@ while user_range != "quit":
     total_score = round((scores / count) * 100 ,2)
 
     #Encourage player dialog
-    print ("<-------------------------------------->\n")
+    print ("<-------------------------------------->")
 
 #High score will print a joke as reward
 
@@ -203,7 +206,7 @@ while user_range != "quit":
     if total_score >= 80 and total_score < 100:
         print("Good Accuracy\n")
     if total_time < (keystroke_count * 1.6) and total_score > 85 and total_score != 100:
-        print("Great job speedy fingers!\n")
+        print("Great job speedy fingers!")
 
 #Bad Score
     if total_score == 0:
@@ -214,23 +217,14 @@ while user_range != "quit":
         print("Pick up the pace")
 
 #Print Results
-    print("\n")
     print("<-------------------------------------->\n")
-    print(f"Time: {total_time} seconds")
-    print(f"Accuracy {total_score}%\n")
+    print(f"           Time: {total_time} seconds    ")
+    print(f"           Accuracy {total_score}%\n    ")
 
 #Loop trhough the game until user enter quit
     print("<-------------------------------------->")
-    print("|                                      |")
-    print("|-------------- Press Enter -----------|")
-    print("|                   or                 |")
-    print("|------ type python, pandas, or git ---|")
-    print("|                   or                 |")
-    print("|------- type number to extend game ---|")
-    print("|                                      |")
-    print("|---------- type quit to stop ---------|")
-    print("|                                      |")
-    print("<-------------------------------------->\n\n\n")
+    print("|-- type quit, python git, and Enter --|")
+    print("<-------------------------------------->\n")
     user_range = input(" ------------- Another Round ? --------- \n\n")
 
 
