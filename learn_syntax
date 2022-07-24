@@ -100,8 +100,8 @@ while user_range != "quit":
         user_range = attempt_count
     
     if user_range not in list_:
-        print("               Good Luck !!!             ")
-        print ("<-------------------------------------->")
+        print("              Good Luck !!!             ")
+        print("<-------------------------------------->")
 #Additional Game Modes
 
     #If user inputs git, return git syntax
@@ -218,8 +218,8 @@ while user_range != "quit":
 
 #Print Results
     print("<-------------------------------------->\n")
-    print(f"           Time: {total_time} seconds    ")
-    print(f"           Accuracy {total_score}%\n    ")
+    print(f"             Time:     {total_time} seconds")
+    print(f"             Accuracy: {total_score}%\n")
 
 #Loop trhough the game until user enter quit
     print("<-------------------------------------->")
