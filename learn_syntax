@@ -16,8 +16,11 @@ url = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious,political,racist
 
 # Initiate dcitionary of lists with syntax sets. Default is syntax
 
-        #Common Syntax Characters
-list_ = {"syntax": 
+#List to contain all programming functions/cheat sheet       
+list_ = {
+        #Common Syntax Characters - Default
+        "syntax": 
+
             [ "*","(",")","_","+",
             "{","}","|","[","]","\\",
             ":",'"',"'",";","'",
@@ -27,6 +30,7 @@ list_ = {"syntax":
 
         #Common git Commands            
         "git" :
+
             ['cd', 'cd ../', 'cd ~', 'code', 'conda activate', 'cp', 'echo', 
              'git add .', 'git branch', 'git checkout', 'git clone', 'git commit -m', 
              'git config', 'git diff', 'git fetch', 'git init', 'git log', 'git log', 
@@ -38,6 +42,7 @@ list_ = {"syntax":
         
         # Common python functions
         "python":
+
             ['!=', '%=', '*=', '+=', '-=', '/=', '<=', '==', '>=', 
              '.append', '.discard', '.format', '.get', '.insert', 
              '.intersection', '.pop', '.remove', '.remove', '.setdefault', 
@@ -51,6 +56,7 @@ list_ = {"syntax":
         
         #Common PANDAS functionality
         "pandas":
+
             ['.DataFrame', '.DataFrame', '.Series', '.append', '.apply', '.astype', 
              '.columns', '.concat', '.corr', '.count', '.describe', '.describe', '.dropna', 
              '.fillna', '.groupby', '.head', '.index=', '.info', '.isnull', '.join', '.max', 
@@ -59,9 +65,19 @@ list_ = {"syntax":
              '.read_table', '.rename', '.replace', '.set_index', '.shape', '.shift', 
              '.sort_index', '.sort_values', '.std', '.tail', '.to_csv', '.to_excel', 
              '.to_json', '.to_sql', '.value_counts', 'df', 'iloc', 'loc'
-            ]
-        }
+            ],
 
+        # Common SQL functionality
+        "sql" : 
+
+            ['(*)',');',',',';','ADD COLUMN','ALL','ALTER TABLE','AND','AVG()','BETWEEN','BIGINT','BOOLEAN',
+            'CASCADE','COUNT()','CROSS JOIN','DEFAULT','DELETE FROM','DESC','DROP TABLE IF EXISTS',
+            'EXISTS','FROM','FULL JOIN','FULL OUTER JOIN','GROUP BY','HAVING','IN','INNER JOIN','INSERT INTO',
+            'INTO','IS NOT NULL','JOIN','LEFT JOIN','LIKE','MAX()','MIN()','NATURAL JOIN','NULL','ON','OR','ORDER BY',
+            'PRIMARY KEY','REMOVE','RIGHT JOIN','SELECT','SUM()','TRUE','WHERE','[ASC]','_%'
+            ]
+
+        }
 
 
 #Game Instructions
@@ -70,7 +86,7 @@ print("<-------------------------------------->")
 print("|                                      |")
 print("|-------------- Press Enter -----------|")
 print("|                   or                 |")
-print("|------ type python, pandas, or git ---|")
+print("|------ python, pandas, git or sql ----|")
 print("|                   or                 |")
 print("|------- type number to extend game ---|")
 print("|                                      |")
@@ -99,9 +115,12 @@ while user_range != "quit":
     if user_range == "":
         user_range = attempt_count
     
+    #Data Scrubbing:  If user enters wrong values automatically start the game in syntax mode
     if user_range not in list_:
         print("              Good Luck !!!             ")
         print("<-------------------------------------->")
+
+
 #Additional Game Modes
 
     #If user inputs git, return git syntax
@@ -113,6 +132,9 @@ while user_range != "quit":
     #If user inputs pandas, return pandas syntax
     elif user_range == "pandas":
         char_list =  "pandas"
+    #If user inputs sql, return sql syntax
+    elif user_range == "sql":
+        char_list =  "sql"
 
 # Extend number of keystrokes
 
@@ -202,6 +224,9 @@ while user_range != "quit":
             joke = data["joke"]  + "\n"
         print(joke)
 
+        #Give user time to read joke
+        time.sleep(3)
+
 #Other Encouragement
     if total_score >= 80 and total_score < 100:
         print("Good Accuracy\n")
@@ -218,12 +243,12 @@ while user_range != "quit":
 
 #Print Results
     print("<-------------------------------------->\n")
-    print(f"             Time:     {total_time} seconds")
-    print(f"             Accuracy: {total_score}%\n")
+    print(f"        Time:     {total_time} seconds")
+    print(f"        Accuracy: {total_score}%\n")
 
 #Loop trhough the game until user enter quit
     print("<-------------------------------------->")
-    print("|-- type quit, python git, and Enter --|")
+    print("|-- modes: python, git, sql, or quit --|")
     print("<-------------------------------------->\n")
     user_range = input(" ------------- Another Round ? --------- \n\n")
 
